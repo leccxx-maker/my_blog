@@ -37,3 +37,11 @@ jobs:
       run: |
         hexo clean
         hexo deploy --generate
+    
+    - name: Generate files
+      run: |
+        hexo clean
+        hexo generate
+        mv public docs
+        touch docs/.nojekyll
+      
